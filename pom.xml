@@ -7,9 +7,9 @@
     <!--JiraAdapter is added to maven repo the JiraAdapter jar
    mvn install:install-file -Dfile=/home/eleni/IdeaProjects/JiraAdapter/target/JiraAdapter-1.0.jar -DgroupId=JiraAdapter -DartifactId=JiraAdapter -Dversion=1.0 -Dpackaging=jar
     -->
-    <groupId>JiraAdapter</groupId>
+    <groupId>eu.uqasar.adapter</groupId>
     <artifactId>JiraAdapter</artifactId>
-    <version>1.0</version>
+    <version>2.0.0</version>
 
 
     <dependencies>
@@ -18,9 +18,9 @@
         mvn install:install-file -Dfile=/home/eleni/IdeaProjects/uQasarAdapter/target/uQasarAdapter.jar -DgroupId=uQasarAdapter -DartifactId=uQasarAdapter -Dversion=1.0 -Dpackaging=jar
         -->
         <dependency>
-        <groupId>uQasarAdapter</groupId>
+        <groupId>eu.uqasar.adapter</groupId>
         <artifactId>uQasarAdapter</artifactId>
-        <version>1.0</version>
+        <version>2.1.0</version>
         </dependency>
         <dependency>
             <!-- JRJC is distributed under the Apache 2.0 license. -->
@@ -48,8 +48,8 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <version>2.5.1</version>
             <configuration>
-                <source>1.6</source>
-                <target>1.6</target>
+                <source>1.8</source>
+                <target>1.8</target>
                 <encoding>UTF-8</encoding>
                 <showWarnings>true</showWarnings>
                 <showDeprecation>true</showDeprecation>
@@ -121,11 +121,9 @@
             <plugins>
                 <plugin>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>2.3.2</version>
+                    <version>3.8.0</version>
                     <configuration>
-                        <source>1.6</source>
-                        <target>1.6</target>
-                        <compilerArgument></compilerArgument>
+                        <release>8</release>
                     </configuration>
                 </plugin>
             </plugins>
@@ -134,6 +132,12 @@
     </build>
 
     <repositories>
+        <repository>
+            <id>internal-repository</id>
+            <name>Internal repo</name>
+            <url>http://www.atb-bremen.de/artifactory/ext-releases-local/</url>
+        </repository>
+
         <repository>
             <id>Apache Nexus</id>
             <url>https://repository.apache.org/content/repositories/snapshots/</url>
